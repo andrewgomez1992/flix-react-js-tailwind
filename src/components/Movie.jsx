@@ -40,7 +40,7 @@ const Movie = ({ item }) => {
                 </p>
                 <p >
                     {like ? (
-                        <FaHeart className='absolute top-4 left-4 text-gray-300' />
+                        <FaHeart className='absolute top-4 left-4 text-gray-300' /> // Heart on hover :)
                     ) : (
                         <FaRegHeart className='absolute top-4 left-4 text-gray-300' />
                     )}

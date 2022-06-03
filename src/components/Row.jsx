@@ -1,24 +1,26 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Movie from './Movie';
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 
 const Row = ({ title, fetchURL, rowID }) => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        axios.get(fetchURL).then((response) => {
-            setMovies(response.data.results);
-        });
+        axios.get(fetchURL)
+            .then((res) => {
+                setMovies(res.data.results);
+            });
     }, [fetchURL]);
 
     const slideLeft = () => {
-        var slider = document.getElementById('slider' + rowID);
-        slider.scrollLeft = slider.scrollLeft - 500;
+        let slider = document.getElementById('slider' + rowID)
+        slider.scrollLeft = slider.scrollLeft - 500
     };
+
     const slideRight = () => {
-        var slider = document.getElementById('slider' + rowID);
-        slider.scrollLeft = slider.scrollLeft + 500;
+        let slider = document.getElementById('slider' + rowID)
+        slider.scrollLeft = slider.scrollLeft + 500
     };
 
     return (
