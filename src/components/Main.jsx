@@ -24,7 +24,7 @@ const Main = () => {
     return (
         <div className='w-full h-[550px] text-white'>
             <div className='w-full h-full'>
-                <img src="" alt={movie?.title} />
+                <img src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt={movie?.title} />
             </div>
         </div>
     )
