@@ -6,19 +6,27 @@ const Main = () => {
 
     const [movies, setMovies] = useState([])
 
+    // taking a movie and picking a random one each time :)
+    const movie = movies[Math.floor(Math.random() * movies.length)];
+
     useEffect(() => {
         axios.get(requests.requestPopular)
             .then(res => {
-                setMovies(res.data)
+                setMovies(res.data.results)
                 console.log(res)
             })
             .catch(err => {
-
+                console.log(err)
             })
     }, [])
+    console.log(movie)
 
     return (
-        <div>Main</div>
+        <div className='w-full h-[550px] text-white'>
+            <div className='w-full h-full'>
+                <img src="" alt={movie?.title} />
+            </div>
+        </div>
     )
 }
 
