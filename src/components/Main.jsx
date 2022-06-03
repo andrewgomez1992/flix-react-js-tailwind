@@ -23,7 +23,7 @@ const Main = () => {
 
     // truncating movie overview to only be a particular amount of characters 
     const truncateString = (string, number) => {
-        if (string.length > number) {
+        if (string?.length > number) {
             return string.slice(0, number) + '...'
         } else {
             return string
