@@ -13,14 +13,15 @@ const Main = () => {
         axios.get(requests.requestPopular)
             .then(res => {
                 setMovies(res.data.results)
-                //console.log(res)
             })
             .catch(err => {
                 console.log(err)
             })
     }, [])
-    //console.log(movie)
 
+    // console.log(movie)
+
+    // truncating movie overview to only be a particular amount of characters 
     const truncateString = (string, number) => {
         if (string.length > number) {
             return string.slice(0, number) + '...'
