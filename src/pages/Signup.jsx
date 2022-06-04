@@ -37,19 +37,19 @@ const Signup = () => {
                             >
                                 <input
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className='p-3 my-2 bg-gray-700 rouded'
+                                    className='p-3 my-2 bg-gray-700 rounded'
                                     type='email'
                                     placeholder='Email'
                                     autoComplete='email'
                                 />
                                 <input
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className='p-3 my-2 bg-gray-700 rouded'
+                                    className='p-3 my-2 bg-gray-700 rounded'
                                     type='password'
                                     placeholder='Password'
                                     autoComplete='current-password'
                                 />
-                                <button className='bg-red-600 py-3 my-6 rounded font-bold'>
+                                <button className='bg-violet-700 py-3 my-6 rounded font-bold'>
                                     Sign Up
                                 </button>
                                 <div className='flex justify-between items-center text-sm text-gray-600'>
@@ -61,7 +61,7 @@ const Signup = () => {
                                 </div>
                                 <p className='py-8'>
                                     <span className='text-gray-600'>
-                                        Already subscribed to Netflix?
+                                        Already subscribed to Flix?
                                     </span>{' '}
                                     <Link to='/login'>Sign In</Link>
                                 </p>
