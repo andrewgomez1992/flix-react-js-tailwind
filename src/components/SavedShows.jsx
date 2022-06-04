@@ -20,8 +20,8 @@ const SavedShows = () => {
 
     useEffect(() => {
         onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
-            setMovies(doc.data()?.savedShows);
-        });
+            setMovies(doc.data().savedShows)
+        })
     }, [user?.email]);
 
     const movieRef = doc(db, 'users', `${user?.email}`)
@@ -55,7 +55,7 @@ const SavedShows = () => {
                             className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'
                         >
                             <img
-                                className='w-full h-auto block rounded-xl'
+                                className='w-full h-auto block rounded-xl shadow-md shadow-violet-600'
                                 src={`https://image.tmdb.org/t/p/w500/${item?.img}`}
                                 alt={item?.title}
                             />
@@ -63,7 +63,7 @@ const SavedShows = () => {
                                 <p className='white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center'>
                                     {item?.title}
                                 </p>
-                                <p onClick={() => deleteShow(item.id)} className='absolute text-gray-300 top-4 right-4'><AiOutlineClose /></p>
+                                <p><AiOutlineClose className='absolute text-violet-500 top-4 right-4' /></p>
                             </div>
                         </div>
                     ))}
