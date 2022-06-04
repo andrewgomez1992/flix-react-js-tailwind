@@ -25,6 +25,8 @@ const SavedShows = () => {
     }, [user?.email]);
 
     const movieRef = doc(db, 'users', `${user?.email}`)
+
+    // taking passedID and filtering, what we dont want inside is passedID
     const deleteShow = async (passedID) => {
         try {
             const result = movies.filter((item) => item.id !== passedID)
@@ -63,7 +65,7 @@ const SavedShows = () => {
                                 <p className='white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center'>
                                     {item?.title}
                                 </p>
-                                <p><AiOutlineClose className='absolute text-violet-500 top-4 right-4' /></p>
+                                <p><AiOutlineClose onClick={() => deleteShow(item.id)} className='absolute text-violet-500 top-4 right-4' /></p>
                             </div>
                         </div>
                     ))}
